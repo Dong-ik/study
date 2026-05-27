@@ -1,16 +1,43 @@
-function MyComponent({p1, p3}) {
-        return (<>
-        <h2>프롭스 구조분해할당</h2>
-        <p>
-            {p1}, {p3}
-        </p>
-    </>)
-}
+import { useState } from 'react';
+import FrontComp from './components/FrontComp.jsx';
+import BackComp from './components/BackComp.jsx';
 
 function App() {
+    const [mode, setMode] = useState('both');
+    const handleSetMode = (mode) => {
+        setMode(mode);
+    };
+    let contents = null;
+    if (mode === 'front') {
+        contents = <>
+            <FrontComp onSetMode={(mode) => {
+                setMode(mode);
+            }} />
+        </>
+    } else if (mode === 'back') {
+        contents = <>
+            <BackComp setMode={setMode} />
+        </>
+    } else {
+        contents = <>
+            <FrontComp onSetMode={(mode) => {
+                handleSetMode(mode);
+            }} />
+            <BackComp setMode={handleSetMode} />
+        </>
+    }
+
     return (<>
-        <MyComponent p1="HTML5" p2="CSS3" p3="JavaScript" p4="jQuery" />
+        <h2><a href='/' onClick={(event) => {
+            event.preventDefault();
+            setMode('both');
+            }}>React-State</a>
+        </h2>
+        <ol>
+            {contents}
+        </ol>
     </>)
+
 }
 
 export default App
