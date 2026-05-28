@@ -1,43 +1,43 @@
-import { useState } from 'react';
-import FrontComp from './components/FrontComp.jsx';
-import BackComp from './components/BackComp.jsx';
+import {useState} from 'react';
+
+const TopComp = ({MyData}) => {
+    return (<>
+        <ol>
+            <li>프론트엔드</li>
+            <ul>
+                {MyData.front.map((item, i) => <li key={i}>{item}</li>)}
+            </ul>
+            <li>백엔드</li>
+            <ul>
+                {MyData.back.map((item, i) => <li key={i}>{item}</li>)}
+            </ul>
+        </ol>
+    </>);
+}
 
 function App() {
-    const [mode, setMode] = useState('both');
-    const handleSetMode = (mode) => {
-        setMode(mode);
+    const [MyData, setMyData] = useState({
+        front : ['HTML5', 'CSS3', 'JavaScript', 'jQuery'],
+        back : ['Java', 'Oracle', 'JSP', 'Spring Boot']
+    });
+
+    const addFront = () => {
+        MyData.front.push('React');
+        setMyData(MyData);
     };
-    let contents = null;
-    if (mode === 'front') {
-        contents = <>
-            <FrontComp onSetMode={(mode) => {
-                setMode(mode);
-            }} />
-        </>
-    } else if (mode === 'back') {
-        contents = <>
-            <BackComp setMode={setMode} />
-        </>
-    } else {
-        contents = <>
-            <FrontComp onSetMode={(mode) => {
-                handleSetMode(mode);
-            }} />
-            <BackComp setMode={handleSetMode} />
-        </>
-    }
+
+    const addBack = () => {
+        const newBack = [...MyData.back, 'Node.js'];
+        const newMyData = {...MyData, back: newBack};
+        setMyData(newMyData);
+    };
 
     return (<>
-        <h2><a href='/' onClick={(event) => {
-            event.preventDefault();
-            setMode('both');
-            }}>React-State</a>
-        </h2>
-        <ol>
-            {contents}
-        </ol>
-    </>)
-
+        <h2>React-Shallow</h2>
+        <TopComp MyData={MyData} />
+        <button type='button' onClick={addFront}>프론트추가</button>
+        <button type='button' onClick={addBack}>백추가</button>
+    </>);
 }
 
 export default App
