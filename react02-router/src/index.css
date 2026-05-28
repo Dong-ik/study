@@ -1,0 +1,9 @@
+*{
+    margin: 5px;
+}
+
+.active{
+    color: red;
+    font-weight: bold;
+    background-color: aquamarine;
+}
