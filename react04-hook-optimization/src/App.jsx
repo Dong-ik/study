@@ -4,7 +4,7 @@ import TopNavi from './components/TopNavi.jsx'
 import UseRefExam1 from './components/UseRefExam1.jsx'
 import UseRefExam2 from './components/UseRefExam2.jsx'
 import UseMemoExam from './components/UseMemoExam.jsx'
-//import UseCallback from './components/UseCallback.jsx'
+import UseCallbackExam from './components/UseCallbackExam.jsx'
 //import UseId from './components/UseId.jsx'
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
         <Route path="/use-ref1" element={<UseRefExam1 />} />
         <Route path="/use-ref2" element={<UseRefExam2 />} />
         <Route path="/use-memo" element={<UseMemoExam />} />
-        {/* <Route path="/use-callback" element={<UseCallback />} /> */}
+        <Route path="/use-callback" element={<UseCallbackExam />} />
         {/* <Route path="/use-id" element={<UseId />} /> */}
       </Routes>
     </>

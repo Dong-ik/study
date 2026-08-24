@@ -3,8 +3,7 @@ import { useState } from 'react';
 
 const isPrime = (num) => {
     console.log('소수판단중..');
-    for (let exCost=1; exCost<1234567890; exCost++) {
-    }
+    for (let exCost=1; exCost<1234567890; exCost++) 
     if (num <= 1) return false;
     for (let i=2; i<Math.sqrt(num); i++) {
         if(num % i === 0) return false;
@@ -20,7 +19,7 @@ const UseMemoExam = () => {
 
     //const checkPrime = useMemo(() => isPrime(number), [number]);
 
-    return (<>
+    return (<>  
         <h2>useMemo 사용하기</h2>
         <input type='number' value={number} placeholder="소수 판단할 숫자 입력"
             onChange={(e) => setNumber(e.target.value)} />
