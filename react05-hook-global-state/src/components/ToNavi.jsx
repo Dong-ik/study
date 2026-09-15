@@ -3,8 +3,8 @@ import {NavLink} from 'react-router-dom'
 const TopNavi = () => {
   return (
     <nav>
-      <NavLink to="/use-reducer">useReducer</NavLink>
-      <NavLink to="/useContext">useContext</NavLink>
+      <NavLink to="/use-reducer">useReducer</NavLink>&nbsp;
+      <NavLink to="/useContext">useContext</NavLink>&nbsp;
     </nav>
   )
 }
