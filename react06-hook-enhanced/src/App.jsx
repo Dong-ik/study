@@ -2,7 +2,7 @@ import { Routes, Route } from 'react-router-dom'
 import TopNavi from './components/TopNavi'
 import UseOptimisticExam from './components/UseOptimisticExam'
 import UseActionStateExam from './components/UseActionStateExam'
-//import UseFromStatusExam from './components/UseFromStatusExam'
+import UseFormStatusExam from './components/UseFormStatusExam'
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
         <Route path="/" element={<UseOptimisticExam />} />
         <Route path="/use-optimistic" element={<UseOptimisticExam />} />
         <Route path="/use-action-state" element={<UseActionStateExam />} />
-        {/* <Route path="/use-from-status" element={<UseFromStatusExam />} /> */}
+        <Route path="/use-form-status" element={<UseFormStatusExam />} />
       </Routes>
     </>
   );

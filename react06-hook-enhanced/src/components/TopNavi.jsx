@@ -5,7 +5,7 @@ const TopNavi = () => {
     <nav>
       <NavLink to="/use-optimistic">useOptimistic</NavLink>&nbsp;
       <NavLink to="/use-action-state">useActionState</NavLink>&nbsp;
-      <NavLink to="/use-from-status">useFromStatus</NavLink>&nbsp;
+      <NavLink to="/use-form-status">useFormStatus</NavLink>&nbsp;
     </nav>
   );
 }
